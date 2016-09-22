@@ -1,0 +1,103 @@
+@name PC
+@inputs EGP:wirelink User:entity ON
+@outputs 
+@persist Size
+@model models/props_lab/citizenradio.mdl
+
+# Note to all contributors
+# Try not to change starting screen
+# If you did made changes and want to share them go to github search for empty version folder and upload it there from that point on people will edit your work.
+# This project was made to be made by community so I can learn more E2
+# Remember every one is still learnin even best programist have to learn if he wouldn't he would easily turn  from good to shitty programist.
+# One more thing try not to use ifs they are making code buggy I already tried once and it didn't worked out good Try making it by math like i do as you see there is only 2 ifs but one of them is just to welcome you.
+# Without second one this wouldn't work. Also try keeping Mac OS X style. We will start windows style version later.
+
+
+if(first() | dupefinished()) {
+    hint("PC created by gmod Community",30)
+    EGP:egpClear()
+}
+#   +------------+
+#   !   CONFIG   !
+#   +------------+
+    #No config at this point
+#End of config
+# Do not change betwen this line
+########################################################################################
+runOnTick(1)
+
+Cursor = EGP:egpCursor(User)
+ 
+function number button(Num){
+    return inrange(Cursor,EGP:egpPos(Num),EGP:egpPos(Num) + EGP:egpSize(Num))
+}
+
+if(Size >= 288) {
+    Size = 288
+    Desk = 1
+}
+elseif(ON & Size == 0) {
+    Size = 31
+}
+elseif(ON) {
+    Size++
+}
+else {
+    Desk = 0
+}
+
+Size = Size * ON
+
+EGP:egpDrawTopLeft(1)
+EGP:egpBox(1,vec2(0,0),vec2(512,512)*ON)
+EGP:egpMaterial(1,"console/title_war_widescreen")
+
+EGP:egpDrawTopLeft(2)
+EGP:egpRoundedBox(2,vec2(100,150),vec2(312,212)*ON)
+EGP:egpColor(2,vec(210,210,210))
+
+EGP:egpDrawTopLeft(3)
+EGP:egpRoundedBoxOutline(3,vec2(100,150),vec2(312,212)*ON)
+EGP:egpColor(3,vec(0,0,0))
+
+EGP:egpText(4,"Fish OS is starting...",vec2(150,170))
+EGP:egpSize(4,25*ON)
+EGP:egpColor(4,vec(0,0,0))
+
+EGP:egpText(5,"OS Version: 1.0",vec2(170,220))
+EGP:egpSize(5,25*ON)
+EGP:egpColor(5,vec(0,0,0))
+
+EGP:egpRoundedBox(6,vec2(110,317),vec2(292,35)*ON)
+EGP:egpColor(6,vec(72,72,72))
+
+EGP:egpRoundedBox(7,vec2(112,319),vec2(Size,31)*ON)
+EGP:egpColor(7,vec(0,255,0))
+
+########################################################################################
+#And this line
+
+
+# Under this line you can midify freely as long as it is working
+########################################################################################
+EGP:egpDrawTopLeft(8)
+EGP:egpBox(8,vec2(0,0),vec2(512,512)*Desk)
+EGP:egpMaterial(8,"console/background_mvm")
+
+EGP:egpDrawTopLeft(9)
+EGP:egpBox(9,vec2(0,0),vec2(512,30)*Desk)
+EGP:egpColor(9,vec(210,210,210))
+
+EGP:egpDrawTopLeft(10)
+EGP:egpBox(10,vec2(0,0),vec2(65,30)*Desk)
+
+EGP:egpDrawTopLeft(11)
+EGP:egpBox(11,vec2(65,0),vec2(75,30)*Desk)
+
+EGP:egpText(12,"Menu",vec2(2,2))
+EGP:egpColor(12,vec(0,0,0))
+EGP:egpSize(12,26*Desk)
+
+EGP:egpText(13,"About",vec2(70,2))
+EGP:egpColor(13,vec(0,0,0))
+EGP:egpSize(13,26*Desk)
