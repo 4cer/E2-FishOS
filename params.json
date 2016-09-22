@@ -1,0 +1,6 @@
+{
+  "name": "E2-fishos",
+  "tagline": "",
+  "body": "###What is FishOS?\r\nFish os is OS made completely in E2. In other word a version of lua used to make in game programs. Everything is made in gmod using wiremod. FishOS is os made for all types of gamemode. Most likely for darkrp.\r\n\r\n###Main goal\r\nMy main goal is to bring E2 programists together and make OS. I know that this is not easy but this is open source project. Everyone who will make working changes to code will be contributor\r\n\r\n###What you need to know to be contributor?\r\nDon't make code that will be made only like that:\r\nif(ASDjh) {\r\nasdhkjas\r\n}\r\nelse {\r\nasdhjkash\r\n}\r\n\r\nYou should use math mainly math e.g.\r\nEGP:egpBox(1,vec2(12,124),vec2(126,126)*ON)\r\n\r\nVariables for making os:\r\nON - value that is telling if pc is ON or OFF it can be only 1 or 0\r\nDesk - value that is telling if PC has booted up or not it can only be 1 or 0\r\n\r\n###Contact\r\ne-mail: wojcieszko@hotmail.com or chuj6669@gmail.com\r\n\r\nts: abot.tk",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
